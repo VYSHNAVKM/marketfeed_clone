@@ -5,6 +5,8 @@ import 'package:marketfeed_clone/view/home/drawer/pages/deleteaccount.dart';
 import 'package:marketfeed_clone/view/home/drawer/pages/logout.dart';
 import 'package:marketfeed_clone/view/home/drawer/pages/mybookmarks.dart';
 import 'package:marketfeed_clone/view/home/drawer/pages/opendemataccount.dart';
+import 'package:marketfeed_clone/view/login_screen/register_screen.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class DrawerPage extends StatefulWidget {
   const DrawerPage({
@@ -16,7 +18,36 @@ class DrawerPage extends StatefulWidget {
 }
 
 class _DrawerPageState extends State<DrawerPage> {
-  int _selectedIndex = 0;
+  Future logout(BuildContext context) async {
+    SharedPreferences pref = await SharedPreferences.getInstance();
+    pref.remove('number');
+    showDialog(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          title: const Text('LOGOUT!'),
+          content: const Text('Do you want to logout ?'),
+          actions: <Widget>[
+            TextButton(
+              onPressed: () {
+                Navigator.pushAndRemoveUntil(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => RegisterScreen(),
+                    ),
+                    (route) => false);
+              },
+              child: const Text('YES'),
+            ),
+            TextButton(
+              onPressed: () => Navigator.of(context).pop(),
+              child: const Text('NO'),
+            ),
+          ],
+        );
+      },
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +70,6 @@ class _DrawerPageState extends State<DrawerPage> {
                 Text('My Bookmarks', style: FontStyleConstant.drawerfont),
               ],
             ),
-            selected: _selectedIndex == 0,
             onTap: () {
               Navigator.of(context).push(MaterialPageRoute(
                 builder: (context) => MyBookmarks(),
@@ -60,7 +90,6 @@ class _DrawerPageState extends State<DrawerPage> {
                 Text('Open Demat Account', style: FontStyleConstant.drawerfont),
               ],
             ),
-            selected: _selectedIndex == 0,
             onTap: () {
               Navigator.of(context).push(MaterialPageRoute(
                 builder: (context) => OpenDematAccount(),
@@ -84,7 +113,6 @@ class _DrawerPageState extends State<DrawerPage> {
                 Text('About marketfeed', style: FontStyleConstant.drawerfont),
               ],
             ),
-            selected: _selectedIndex == 0,
             onTap: () {},
           ),
           ListTile(
@@ -101,7 +129,6 @@ class _DrawerPageState extends State<DrawerPage> {
                 Text('Privacy Policy', style: FontStyleConstant.drawerfont),
               ],
             ),
-            selected: _selectedIndex == 0,
             onTap: () {},
           ),
           ListTile(
@@ -118,7 +145,6 @@ class _DrawerPageState extends State<DrawerPage> {
                 Text('Terms of Use', style: FontStyleConstant.drawerfont),
               ],
             ),
-            selected: _selectedIndex == 0,
             onTap: () {},
           ),
           ListTile(
@@ -135,7 +161,6 @@ class _DrawerPageState extends State<DrawerPage> {
                 Text('Support', style: FontStyleConstant.drawerfont),
               ],
             ),
-            selected: _selectedIndex == 0,
             onTap: () {},
           ),
           ListTile(
@@ -153,7 +178,6 @@ class _DrawerPageState extends State<DrawerPage> {
                     style: FontStyleConstant.drawerfont),
               ],
             ),
-            selected: _selectedIndex == 0,
             onTap: () {},
           ),
           ListTile(
@@ -170,7 +194,6 @@ class _DrawerPageState extends State<DrawerPage> {
                 Text('Delete Account', style: FontStyleConstant.drawerfont),
               ],
             ),
-            selected: _selectedIndex == 0,
             onTap: () {
               Navigator.of(context).push(MaterialPageRoute(
                 builder: (context) => DeletePage(),
@@ -195,11 +218,9 @@ class _DrawerPageState extends State<DrawerPage> {
                         fontWeight: FontWeight.w400)),
               ],
             ),
-            selected: _selectedIndex == 0,
             onTap: () {
-              Navigator.of(context).push(MaterialPageRoute(
-                builder: (context) => LogOut(),
-              ));
+              Navigator.pop(context);
+              logout(context);
             },
           ),
           Divider(
@@ -219,7 +240,6 @@ class _DrawerPageState extends State<DrawerPage> {
                 ),
               ],
             ),
-            selected: _selectedIndex == 0,
             onTap: () {},
           ),
         ],

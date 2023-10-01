@@ -2,9 +2,20 @@ import 'package:flutter/material.dart';
 import 'package:marketfeed_clone/view/home/screens/market_screen/pages/leaderboardpage/widget/dropdownbutton.dart';
 import 'package:marketfeed_clone/view/home/screens/market_screen/pages/leaderboardpage/widget/stockcontainer.dart';
 
-class LeaderBoardPage extends StatelessWidget {
+class LeaderBoardPage extends StatefulWidget {
   const LeaderBoardPage({super.key});
 
+  @override
+  State<LeaderBoardPage> createState() => _LeaderBoardPageState();
+}
+
+class _LeaderBoardPageState extends State<LeaderBoardPage> {
+  int topvalue = 1;
+  int niftyvalue = 1;
+  String value1 = "Top Gainers";
+  String value2 = "Top Losers";
+  String selectedvalue1 = "Top Gainers";
+  String selectedvalue2 = "Nifty 50";
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -28,17 +39,96 @@ class LeaderBoardPage extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        'Top Gainers',
+                        selectedvalue1,
                         style: TextStyle(
                             fontSize: 20, fontWeight: FontWeight.bold),
                       ),
                       SizedBox(
                         width: 15,
                       ),
-                      CircleAvatar(
-                        backgroundColor: Colors.grey.shade200,
-                        radius: 15,
-                        child: Dropdown(),
+                      Container(
+                        height: 30,
+                        width: 30,
+                        decoration: BoxDecoration(
+                            color: Colors.grey.shade200,
+                            borderRadius: BorderRadius.circular(20)),
+                        child: InkWell(
+                          onTap: () {
+                            showModalBottomSheet(
+                              elevation: 5,
+                              context: context,
+                              builder: (BuildContext context) {
+                                return Container(
+                                  decoration: BoxDecoration(
+                                    color: Colors.white,
+                                  ),
+                                  height: 300,
+                                  child: Center(
+                                    child: Column(
+                                      children: [
+                                        Padding(
+                                          padding: const EdgeInsets.all(8.0),
+                                          child: Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceBetween,
+                                            children: [
+                                              Text(
+                                                'Choose an option',
+                                                style: TextStyle(
+                                                    fontSize: 20,
+                                                    fontWeight:
+                                                        FontWeight.bold),
+                                              ),
+                                              IconButton(
+                                                onPressed: () {
+                                                  Navigator.of(context).pop();
+                                                },
+                                                icon: Icon(
+                                                  Icons.close,
+                                                  size: 30,
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                        ListTile(
+                                            title: const Text('Top Gainers'),
+                                            leading: Radio(
+                                              value: 1,
+                                              groupValue: topvalue,
+                                              onChanged: (value) {
+                                                setState(() {
+                                                  topvalue = value!;
+                                                  selectedvalue1 = value1;
+                                                });
+                                                Navigator.pop(context);
+                                              },
+                                            )),
+                                        ListTile(
+                                            title: const Text('Top Losers'),
+                                            leading: Radio(
+                                              value: 2,
+                                              groupValue: topvalue,
+                                              onChanged: (value) {
+                                                setState(() {
+                                                  topvalue = value!;
+                                                  selectedvalue1 = value2;
+                                                });
+                                                Navigator.pop(context);
+                                              },
+                                            )),
+                                      ],
+                                    ),
+                                  ),
+                                );
+                              },
+                            );
+                          },
+                          child: Icon(
+                            Icons.keyboard_arrow_down,
+                            size: 30,
+                          ),
+                        ),
                       ),
                     ],
                   ),
@@ -63,10 +153,18 @@ class LeaderBoardPage extends StatelessWidget {
                       SizedBox(
                         width: 15,
                       ),
-                      CircleAvatar(
-                        backgroundColor: Colors.grey.shade200,
-                        radius: 15,
-                        child: Dropdown(),
+                      Container(
+                        height: 30,
+                        width: 30,
+                        decoration: BoxDecoration(
+                            color: Colors.grey.shade200,
+                            borderRadius: BorderRadius.circular(20)),
+                        child: InkWell(
+                          child: Icon(
+                            Icons.keyboard_arrow_down,
+                            size: 30,
+                          ),
+                        ),
                       ),
                     ],
                   ),

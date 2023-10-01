@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 class OpenDematAccount extends StatelessWidget {
   const OpenDematAccount({super.key});
 
@@ -8,61 +7,80 @@ class OpenDematAccount extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        height: double.infinity,
-        width: double.infinity,
+        width: MediaQuery.of(context).size.width,
         decoration: BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage("assets/png/demat bg image.png"),
-            fit: BoxFit.cover,
-          ),
-        ),
-        child: Stack(
+            image: DecorationImage(
+                opacity: 0.5,
+                fit: BoxFit.cover,
+                image: AssetImage("assets/png/demat bg image.png"))),
+        child: ListView(
           children: [
+            SizedBox(
+              height: 40,
+            ),
             Padding(
-              padding: const EdgeInsets.only(left: 340, top: 70),
+              padding: const EdgeInsets.all(10),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  InkWell(
+                    onTap: () {
+                      Navigator.pop(context);
+                    },
+                    child: Container(
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            border: Border.all(color: Colors.white, width: 4)),
+                        child: Icon(
+                          Icons.close,
+                          color: Colors.white,
+                          size: 30,
+                        )),
+                  ),
+                ],
+              ),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                SizedBox(
+                  width: 20,
+                ),
+                SizedBox(
+                  width: 200,
+                  child: Text("Open Demat Account through marketfeed",
+                      textAlign: TextAlign.left,
+                      style: TextStyle(
+                          fontSize: 32,
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold)),
+                ),
+                Container(
+                  height: 300,
+                  width: 150,
+                  decoration: BoxDecoration(
+                      image: DecorationImage(
+                          fit: BoxFit.cover,
+                          image: AssetImage("assets/png/man.png"))),
+                ),
+              ],
+            ),
+            SizedBox(
+              height: 30,
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Container(
-                height: 30,
-                width: 30,
+                height: MediaQuery.of(context).size.height * 0.35,
                 decoration: BoxDecoration(
+                    image:
+                        DecorationImage(image: AssetImage("assets/jpg/ad.jpg")),
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(10)),
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.only(left: 332, top: 62),
-              child: IconButton(
-                  onPressed: () {
-                    Navigator.of(context).pop(context);
-                  },
-                  icon: Icon(
-                    Icons.close_rounded,
-                    color: Colors.black,
-                    size: 30,
-                  )),
-            ),
             SizedBox(
-              width: 250,
-              child: Padding(
-                padding: const EdgeInsets.only(top: 150, left: 30),
-                child: Text(
-                  'Open Demat Account Through marketfeed!',
-                  style: TextStyle(
-                      fontSize: 30,
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold),
-                ),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(left: 200, top: 100),
-              child: Image(image: AssetImage('assets/png/man.png')),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(top: 400, left: 50),
-              child: SizedBox(
-                  height: 300,
-                  width: 300,
-                  child: Image(image: AssetImage('assets/jpg/ad.jpg'))),
+              height: 50,
             )
           ],
         ),

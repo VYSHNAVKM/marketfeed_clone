@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:marketfeed_clone/view/login_screen/register_screen.dart';
 
-class LogOut extends StatelessWidget {
+class LogOut extends StatefulWidget {
   const LogOut({super.key});
 
+  @override
+  State<LogOut> createState() => _LogOutState();
+}
+
+class _LogOutState extends State<LogOut> {
+  
   @override
   Widget build(BuildContext context) {
     return AlertDialog(

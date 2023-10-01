@@ -2,9 +2,10 @@ import 'package:country_picker/country_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:marketfeed_clone/utils/colorconstant.dart';
 import 'package:marketfeed_clone/utils/imageconstant.dart';
+import 'package:marketfeed_clone/view/home/homescreen.dart';
 import 'package:marketfeed_clone/view/login_screen/otp_screen.dart';
 import 'package:marketfeed_clone/view/login_screen/widgets/custom_button.dart';
-
+import 'package:shared_preferences/shared_preferences.dart';
 
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({super.key});
@@ -15,6 +16,22 @@ class RegisterScreen extends StatefulWidget {
 
 class _RegisterScreenState extends State<RegisterScreen> {
   final TextEditingController phoneController = TextEditingController();
+
+  String phonenumber = '7902987407';
+
+  Future checklogin() async {
+    if (phoneController.text == phonenumber) {
+      SharedPreferences pref = await SharedPreferences.getInstance();
+      pref.setString('number', phoneController.text);
+
+      Navigator.of(context).push(MaterialPageRoute(
+        builder: (context) => OtpScreen(),
+      ));
+    }
+    Navigator.of(context).push(MaterialPageRoute(
+      builder: (context) => OtpScreen(),
+    ));
+  }
 
   Country selectedCountry = Country(
     phoneCode: "91",
@@ -28,6 +45,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
     displayNameNoCountryCode: "IN",
     e164Key: "",
   );
+  String pass = '';
 
   @override
   Widget build(BuildContext context) {
@@ -36,6 +54,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
         offset: phoneController.text.length,
       ),
     );
+
     return Scaffold(
       body: SafeArea(
         child: ListView(
@@ -152,9 +171,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       child: CustomButton(
                           text: "Login",
                           onPressed: () {
-                            Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context) => OtpScreen(),
-                            ));
+                            checklogin();
                           }),
                     ),
                     SizedBox(height: 20),
