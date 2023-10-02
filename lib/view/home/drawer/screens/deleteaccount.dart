@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:marketfeed_clone/utils/colorconstant.dart';
 
 import 'package:marketfeed_clone/utils/fontstyles.dart';
-import 'package:marketfeed_clone/view/home/drawer/pages/widget/deleteaccountcontainer.dart';
+import 'package:marketfeed_clone/view/home/drawer/screens/widget/deleteaccountcontainer.dart';
 
 class DeletePage extends StatelessWidget {
   const DeletePage({super.key});
@@ -42,7 +42,7 @@ class DeletePage extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(left: 10),
             child: Text(
-              'Please let usknow the reason why you are leaving',
+              'Please let us know the reason why you are leaving',
               style: FontStyleConstant.deleteaccountsubheading,
             ),
           ),

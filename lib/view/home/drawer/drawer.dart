@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:marketfeed_clone/utils/fontstyles.dart';
 import 'package:marketfeed_clone/view/home/drawer/my_drawer_header.dart';
-import 'package:marketfeed_clone/view/home/drawer/pages/deleteaccount.dart';
-import 'package:marketfeed_clone/view/home/drawer/pages/logout.dart';
-import 'package:marketfeed_clone/view/home/drawer/pages/mybookmarks.dart';
-import 'package:marketfeed_clone/view/home/drawer/pages/opendemataccount.dart';
+import 'package:marketfeed_clone/view/home/drawer/screens/deleteaccount.dart';
+import 'package:marketfeed_clone/view/home/drawer/screens/mybookmarks.dart';
+import 'package:marketfeed_clone/view/home/drawer/screens/opendemataccount.dart';
 import 'package:marketfeed_clone/view/login_screen/register_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 

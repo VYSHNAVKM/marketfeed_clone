@@ -92,7 +92,12 @@ class _LeaderBoardPageState extends State<LeaderBoardPage> {
                                           ),
                                         ),
                                         ListTile(
-                                            title: const Text('Top Gainers'),
+                                            title: const Text(
+                                              'Top Gainers',
+                                              style: TextStyle(
+                                                  fontSize: 20,
+                                                  fontWeight: FontWeight.bold),
+                                            ),
                                             leading: Radio(
                                               value: 1,
                                               groupValue: topvalue,
@@ -105,18 +110,48 @@ class _LeaderBoardPageState extends State<LeaderBoardPage> {
                                               },
                                             )),
                                         ListTile(
-                                            title: const Text('Top Losers'),
-                                            leading: Radio(
-                                              value: 2,
-                                              groupValue: topvalue,
-                                              onChanged: (value) {
-                                                setState(() {
-                                                  topvalue = value!;
-                                                  selectedvalue1 = value2;
-                                                });
-                                                Navigator.pop(context);
-                                              },
-                                            )),
+                                          title: const Text(
+                                            'Top Losers',
+                                            style: TextStyle(
+                                                fontSize: 20,
+                                                fontWeight: FontWeight.bold),
+                                          ),
+                                          leading: Radio(
+                                            value: 2,
+                                            groupValue: topvalue,
+                                            onChanged: (value) {
+                                              setState(() {
+                                                topvalue = value!;
+                                                selectedvalue1 = value2;
+                                              });
+                                              Navigator.pop(context);
+                                            },
+                                          ),
+                                        ),
+                                        Padding(
+                                          padding: const EdgeInsets.all(30),
+                                          child: Row(
+                                            children: [
+                                              SizedBox(
+                                                height: 40,
+                                                width: 150,
+                                                child: ElevatedButton(
+                                                    onPressed: () {},
+                                                    child: Text('Reset')),
+                                              ),
+                                              SizedBox(
+                                                width: 20,
+                                              ),
+                                              SizedBox(
+                                                height: 40,
+                                                width: 150,
+                                                child: ElevatedButton(
+                                                    onPressed: () {},
+                                                    child: Text('Confirm')),
+                                              )
+                                            ],
+                                          ),
+                                        )
                                       ],
                                     ),
                                   ),
