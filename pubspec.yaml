@@ -84,6 +84,9 @@ flutter:
     - assets\png\man.png
     - assets\png\marketfeedlogin.png
     - assets\png\whatsapp.png
+    - assets\readimages\read1.jpg
+    - assets\readimages\read2.jpg
+    - assets\readimages\read3.jpg
    
 
 

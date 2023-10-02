@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:marketfeed_clone/model/readimage.dart';
 import 'package:marketfeed_clone/view/home/screens/read_screen/widget/readstatus.dart';
-
 
 class JargonsPage extends StatelessWidget {
   const JargonsPage({super.key});
@@ -10,7 +10,10 @@ class JargonsPage extends StatelessWidget {
     return ListView.builder(
       itemCount: 10,
       itemBuilder: (context, index) {
-        return ReadStatus();
+        return ReadStatus(
+          images: readimagelist[index],
+          name: namelist[index],
+        );
       },
     );
   }

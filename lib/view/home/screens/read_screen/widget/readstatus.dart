@@ -1,13 +1,10 @@
 import 'package:flutter/material.dart';
 
-class ReadStatus extends StatefulWidget {
-  const ReadStatus({super.key});
+class ReadStatus extends StatelessWidget {
+  const ReadStatus({super.key, required this.images, required this.name});
+  final String images;
+  final String name;
 
-  @override
-  State<ReadStatus> createState() => _ReadStatusState();
-}
-
-class _ReadStatusState extends State<ReadStatus> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -23,8 +20,7 @@ class _ReadStatusState extends State<ReadStatus> {
             child: Container(
               decoration: BoxDecoration(
                   image: DecorationImage(
-                      image: AssetImage('assets/jpg/meeting2.jpg'),
-                      fit: BoxFit.cover),
+                      image: AssetImage(images), fit: BoxFit.cover),
                   borderRadius: BorderRadius.circular(20)),
               height: 150,
               width: 350,
@@ -46,7 +42,7 @@ class _ReadStatusState extends State<ReadStatus> {
                   width: 10,
                 ),
                 Text(
-                  'By Ben Benny',
+                  name,
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
                 )
               ],

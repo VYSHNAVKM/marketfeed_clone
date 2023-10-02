@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:marketfeed_clone/model/readimage.dart';
 import 'package:marketfeed_clone/view/home/screens/read_screen/widget/readstatus.dart';
 
 class MarketsPage extends StatelessWidget {
@@ -9,7 +10,10 @@ class MarketsPage extends StatelessWidget {
     return ListView.builder(
       itemCount: 10,
       itemBuilder: (context, index) {
-        return ReadStatus();
+        return ReadStatus(
+          name: namelist[index],
+          images: readimagelist[index],
+        );
       },
     );
   }

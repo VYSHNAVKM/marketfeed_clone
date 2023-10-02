@@ -2,7 +2,6 @@ import 'package:country_picker/country_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:marketfeed_clone/utils/colorconstant.dart';
 import 'package:marketfeed_clone/utils/imageconstant.dart';
-import 'package:marketfeed_clone/view/home/homescreen.dart';
 import 'package:marketfeed_clone/view/login_screen/otp_screen.dart';
 import 'package:marketfeed_clone/view/login_screen/widgets/custom_button.dart';
 import 'package:shared_preferences/shared_preferences.dart';

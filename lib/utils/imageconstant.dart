@@ -17,4 +17,8 @@ class ImageConstant {
     width: 200,
   );
   static Image dematbgimage = Image.asset('assets/png/Opendemat.png');
+//read images
+  static Image read1 = Image.asset('assets/readimages/read1.jpg');
+  static Image read2 = Image.asset('assets/readimages/read2.jpg');
+  static Image read3 = Image.asset('assets/readimages/read3.jpg');
 }

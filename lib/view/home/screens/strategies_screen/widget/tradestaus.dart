@@ -1,12 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class TradeStatus extends StatelessWidget {
-  const TradeStatus({super.key});
+class TradeStatus extends StatefulWidget {
+  const TradeStatus({super.key, this.images});
+  final images;
 
   static const TextStyle optionStyle =
       TextStyle(fontSize: 18, fontWeight: FontWeight.bold);
 
+  @override
+  State<TradeStatus> createState() => _TradeStatusState();
+}
+
+class _TradeStatusState extends State<TradeStatus> {
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -16,29 +22,37 @@ class TradeStatus extends StatelessWidget {
             color: Colors.white, borderRadius: BorderRadius.circular(20)),
         child: Column(
           children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.all(15),
-                  child: SizedBox(
-                    width: 250,
-                    child: Text(
-                      "1 Active Screen",
-                      style: GoogleFonts.lato(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 16,
-                          color: const Color.fromARGB(255, 57, 77, 112)),
+            Padding(
+              padding: const EdgeInsets.all(15),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  CircleAvatar(
+                    backgroundColor: Colors.blue.shade50,
+                    radius: 10,
+                    child: CircleAvatar(
+                      radius: 4,
+                      backgroundColor: Colors.blue.shade900,
                     ),
                   ),
-                ),
-              ],
+                  SizedBox(
+                    width: 10,
+                  ),
+                  Text(
+                    "1 Active Trade",
+                    style: GoogleFonts.lato(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 16,
+                      color: Colors.grey,
+                    ),
+                  ),
+                ],
+              ),
             ),
             Divider(
               thickness: 1,
             ),
             ListTile(
-              contentPadding: EdgeInsets.only(top: 10),
               title: Row(
                 children: [
                   SizedBox(
@@ -48,6 +62,16 @@ class TradeStatus extends StatelessWidget {
                     "Smart Money",
                     style: GoogleFonts.lato(
                         fontSize: 20, fontWeight: FontWeight.bold),
+                  ),
+                  SizedBox(
+                    width: 130,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8),
+                    child: CircleAvatar(
+                      backgroundImage: AssetImage('assets/png/Avatar.png'),
+                      radius: 25,
+                    ),
                   ),
                 ],
               ),
@@ -59,30 +83,35 @@ class TradeStatus extends StatelessWidget {
                   ),
                   OutlinedButton(
                     onPressed: () {},
-                    child: Text("options"),
+                    child: Text(
+                      "options",
+                      style: GoogleFonts.lato(
+                          fontWeight: FontWeight.bold, color: Colors.black),
+                    ),
                   ),
                   SizedBox(
-                    width: 10,
+                    width: 5,
                   ),
                   OutlinedButton(
                     onPressed: () {},
-                    child: Text("Weekly"),
+                    child: Text(
+                      "Weekly",
+                      style: GoogleFonts.lato(
+                          fontWeight: FontWeight.bold, color: Colors.black),
+                    ),
                   ),
                   SizedBox(
-                    width: 10,
+                    width: 5,
                   ),
                   OutlinedButton(
                     onPressed: () {},
-                    child: Text("Medium Risk"),
+                    child: Text(
+                      "Medium Risk",
+                      style: GoogleFonts.lato(
+                          fontWeight: FontWeight.bold, color: Colors.black),
+                    ),
                   ),
                 ],
-              ),
-              trailing: Padding(
-                padding: const EdgeInsets.all(8),
-                child: CircleAvatar(
-                  backgroundImage: AssetImage('assets/png/Avatar.png'),
-                  radius: 15,
-                ),
               ),
             ),
             SizedBox(
@@ -92,10 +121,10 @@ class TradeStatus extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
-                  height: 80,
-                  width: MediaQuery.of(context).size.width * 0.9,
+                  height: 60,
+                  width: MediaQuery.of(context).size.width * 0.85,
                   decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20),
+                      borderRadius: BorderRadius.circular(10),
                       color: Colors.grey.shade100),
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
@@ -106,15 +135,21 @@ class TradeStatus extends StatelessWidget {
                           children: [
                             Text(
                               "Min Capital",
-                              style: TextStyle(color: Colors.grey),
+                              style: TextStyle(
+                                  color: Colors.grey,
+                                  fontWeight: FontWeight.bold),
                             ),
                             Text(
                               "Win ratio",
-                              style: TextStyle(color: Colors.grey),
+                              style: TextStyle(
+                                  color: Colors.grey,
+                                  fontWeight: FontWeight.bold),
                             ),
                             Text(
                               "30 day return",
-                              style: TextStyle(color: Colors.grey),
+                              style: TextStyle(
+                                  color: Colors.grey,
+                                  fontWeight: FontWeight.bold),
                             ),
                           ],
                         ),
@@ -124,9 +159,9 @@ class TradeStatus extends StatelessWidget {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
-                            Text("60 K", style: optionStyle),
-                            Text("63.13 %", style: optionStyle),
-                            Text("2.3 %", style: optionStyle),
+                            Text("60 K", style: TradeStatus.optionStyle),
+                            Text("63.13 %", style: TradeStatus.optionStyle),
+                            Text("2.3 %", style: TradeStatus.optionStyle),
                           ],
                         ),
                       ],
@@ -137,7 +172,7 @@ class TradeStatus extends StatelessWidget {
             ),
             SizedBox(
               height: 10,
-            )
+            ),
           ],
         ),
       ),

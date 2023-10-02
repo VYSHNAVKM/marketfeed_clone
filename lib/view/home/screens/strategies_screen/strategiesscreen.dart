@@ -5,7 +5,9 @@ import 'package:marketfeed_clone/utils/imageconstant.dart';
 import 'package:marketfeed_clone/view/home/screens/strategies_screen/widget/tradestaus.dart';
 
 class StrategiesScreen extends StatefulWidget {
-  const StrategiesScreen({super.key});
+  StrategiesScreen({
+    super.key,
+  });
 
   @override
   State<StrategiesScreen> createState() => _StrategiesScreenState();
@@ -131,12 +133,15 @@ class _StrategiesScreenState extends State<StrategiesScreen> {
               ),
             ),
           ),
-          TradeStatus(),
-          TradeStatus(),
-          TradeStatus(),
-          TradeStatus(),
-          TradeStatus(),
-          TradeStatus(),
+          ListView.builder(
+            itemCount: 10,
+            physics: NeverScrollableScrollPhysics(),
+            shrinkWrap: true,
+            primary: false,
+            itemBuilder: (context, index) {
+              return TradeStatus();
+            },
+          ),
           SizedBox(
             height: 20,
           )
