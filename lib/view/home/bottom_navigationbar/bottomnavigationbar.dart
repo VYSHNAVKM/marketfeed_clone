@@ -19,11 +19,11 @@ class MyBottom extends StatelessWidget {
           label: 'Strategies',
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.menu_book_outlined),
+          icon: Icon(Icons.auto_stories),
           label: 'Read',
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.menu_book_outlined),
+          icon: Icon(Icons.analytics),
           label: 'Signal',
         ),
         BottomNavigationBarItem(
