@@ -16,7 +16,9 @@ class _SignalScreenState extends State<SignalScreen> {
     return Scaffold(
       appBar: AppBar(
           leading: IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Scaffold.of(context).openDrawer();
+            },
             icon: Icon(
               Icons.person,
               color: ColorConst.appbariconcolor,
