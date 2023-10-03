@@ -48,12 +48,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
 
   @override
   Widget build(BuildContext context) {
-    phoneController.selection = TextSelection.fromPosition(
-      TextPosition(
-        offset: phoneController.text.length,
-      ),
-    );
-
     return Scaffold(
       body: SafeArea(
         child: ListView(
@@ -102,7 +96,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           borderSide: const BorderSide(color: Colors.black12),
                         ),
                         prefixIcon: Container(
-                          padding: const EdgeInsets.all(8.0),
+                          padding: const EdgeInsets.all(20),
                           child: InkWell(
                             onTap: () {
                               showCountryPicker(

@@ -119,7 +119,7 @@ class _StrategiesScreenState extends State<StrategiesScreen> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Text(
-                    "Follow Top Strategies",
+                    "Follow Top Strategies  🚀 ",
                     style: GoogleFonts.lato(
                         fontSize: 24, fontWeight: FontWeight.bold),
                   ),
