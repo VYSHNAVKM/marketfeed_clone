@@ -26,7 +26,7 @@ class _NiftySensexContainerState extends State<NiftySensexContainer> {
           ),
         ),
         SizedBox(
-          height: 5,
+          height: 10,
         ),
         Row(
           children: [

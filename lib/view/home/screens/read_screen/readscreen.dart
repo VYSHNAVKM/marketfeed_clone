@@ -56,6 +56,7 @@ class ReadScreen extends StatelessWidget {
                 labelStyle:
                     TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                 unselectedLabelColor: Colors.black,
+                indicatorColor: Colors.blue.shade900,
                 indicatorWeight: 5,
                 indicatorSize: TabBarIndicatorSize.label,
                 tabs: const [

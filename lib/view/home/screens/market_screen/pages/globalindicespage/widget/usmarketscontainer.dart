@@ -21,7 +21,6 @@ class UsMarketsContainer extends StatelessWidget {
       padding: const EdgeInsets.all(8.0),
       child: Container(
         color: Colors.white,
-        height: 60,
         width: MediaQuery.of(context).size.width * 0.95,
         child: Padding(
           padding: const EdgeInsets.all(8.0),

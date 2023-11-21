@@ -67,7 +67,9 @@ class TopContainer extends StatelessWidget {
                           onPressed: () {},
                           child: Text(
                             'Learn More',
-                            style: TextStyle(fontWeight: FontWeight.bold),
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold),
                           )),
                     ),
                     Padding(

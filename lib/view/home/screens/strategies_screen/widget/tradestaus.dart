@@ -28,11 +28,11 @@ class _TradeStatusState extends State<TradeStatus> {
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   CircleAvatar(
-                    backgroundColor: Colors.blue.shade50,
+                    backgroundColor: Colors.green.shade100,
                     radius: 10,
                     child: CircleAvatar(
                       radius: 4,
-                      backgroundColor: Colors.blue.shade900,
+                      backgroundColor: Colors.green.shade600,
                     ),
                   ),
                   SizedBox(
@@ -50,10 +50,12 @@ class _TradeStatusState extends State<TradeStatus> {
               ),
             ),
             Divider(
-              thickness: 1,
+              thickness: 2,
             ),
-            ListTile(
-              title: Row(
+            Padding(
+              padding: const EdgeInsets.all(10),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   SizedBox(
                     width: 10,
@@ -66,62 +68,61 @@ class _TradeStatusState extends State<TradeStatus> {
                   SizedBox(
                     width: 130,
                   ),
-                  Padding(
-                    padding: const EdgeInsets.all(8),
-                    child: CircleAvatar(
-                      backgroundImage: AssetImage('assets/png/Avatar.png'),
-                      radius: 25,
-                    ),
-                  ),
-                ],
-              ),
-              subtitle: Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  SizedBox(
-                    width: 10,
-                  ),
-                  OutlinedButton(
-                    onPressed: () {},
-                    child: Text(
-                      "options",
-                      style: GoogleFonts.lato(
-                          fontWeight: FontWeight.bold, color: Colors.black),
-                    ),
-                  ),
-                  SizedBox(
-                    width: 5,
-                  ),
-                  OutlinedButton(
-                    onPressed: () {},
-                    child: Text(
-                      "Weekly",
-                      style: GoogleFonts.lato(
-                          fontWeight: FontWeight.bold, color: Colors.black),
-                    ),
-                  ),
-                  SizedBox(
-                    width: 5,
-                  ),
-                  OutlinedButton(
-                    onPressed: () {},
-                    child: Text(
-                      "Medium Risk",
-                      style: GoogleFonts.lato(
-                          fontWeight: FontWeight.bold, color: Colors.black),
-                    ),
+                  CircleAvatar(
+                    backgroundImage: AssetImage('assets/png/Avatar.png'),
+                    radius: 25,
                   ),
                 ],
               ),
             ),
             SizedBox(
-              height: 5,
+              height: 10,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                SizedBox(
+                  width: 10,
+                ),
+                OutlinedButton(
+                  onPressed: () {},
+                  child: Text(
+                    "options",
+                    style: GoogleFonts.lato(
+                        fontWeight: FontWeight.bold, color: Colors.black),
+                  ),
+                ),
+                SizedBox(
+                  width: 5,
+                ),
+                OutlinedButton(
+                  onPressed: () {},
+                  child: Text(
+                    "Weekly",
+                    style: GoogleFonts.lato(
+                        fontWeight: FontWeight.bold, color: Colors.black),
+                  ),
+                ),
+                SizedBox(
+                  width: 5,
+                ),
+                OutlinedButton(
+                  onPressed: () {},
+                  child: Text(
+                    "Medium Risk",
+                    style: GoogleFonts.lato(
+                        fontWeight: FontWeight.bold, color: Colors.black),
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(
+              height: 10,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
-                  height: 60,
                   width: MediaQuery.of(context).size.width * 0.85,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),

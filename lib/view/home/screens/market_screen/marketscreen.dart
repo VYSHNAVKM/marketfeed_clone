@@ -50,7 +50,8 @@ class MarketScreen extends StatelessWidget {
                 labelStyle:
                     TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                 unselectedLabelColor: Colors.black,
-                indicatorWeight: 8,
+                indicatorColor: Colors.blue.shade900,
+                indicatorWeight: 5,
                 indicatorSize: TabBarIndicatorSize.label,
                 tabs: const [
                   Tab(text: 'Watchlist'),

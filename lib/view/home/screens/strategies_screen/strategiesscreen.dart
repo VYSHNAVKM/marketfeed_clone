@@ -42,7 +42,7 @@ class _StrategiesScreenState extends State<StrategiesScreen> {
                     fit: BoxFit.cover),
                 borderRadius: BorderRadius.circular(20),
               ),
-              height: 150,
+              height: 170,
               width: 350,
             ),
           ),
@@ -53,7 +53,6 @@ class _StrategiesScreenState extends State<StrategiesScreen> {
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(20),
               ),
-              height: 150,
               width: 350,
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
@@ -134,7 +133,7 @@ class _StrategiesScreenState extends State<StrategiesScreen> {
             ),
           ),
           ListView.builder(
-            itemCount: 10,
+            itemCount: 5,
             physics: NeverScrollableScrollPhysics(),
             shrinkWrap: true,
             primary: false,

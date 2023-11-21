@@ -44,7 +44,10 @@ class WatchlistPage extends StatelessWidget {
                   backgroundColor: Colors.black,
                 ),
                 onPressed: () {},
-                child: Text('Search & Add Symbol'),
+                child: Text(
+                  'Search & Add Symbol',
+                  style: TextStyle(color: Colors.white),
+                ),
               ),
             ],
           ),

@@ -19,7 +19,6 @@ class IndianIndicesPage extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Container(
-                  height: 120,
                   color: Colors.grey.shade200,
                   width: MediaQuery.of(context).size.width,
                   child: Padding(
